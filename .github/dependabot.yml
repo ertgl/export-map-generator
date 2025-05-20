@@ -1,0 +1,33 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "10:00"
+      timezone: "Europe/Istanbul"
+    groups:
+      babel:
+        patterns:
+          - "@babel/*"
+          - "@types/babel__*"
+          - "babel-*"
+        exclude-patterns:
+          - "babel-jest"
+      commitlint:
+        patterns:
+          - "@commitlint/*"
+      eslint:
+        patterns:
+          - "@cspell/*"
+          - "@eslint/*"
+          - "@types/node"
+          - "eslint"
+          - "eslint-*"
+          - "*-eslint"
+          - "*/eslint-*"
+          - "globals"
+      jest:
+        patterns:
+          - "jest"
+          - "babel-jest"

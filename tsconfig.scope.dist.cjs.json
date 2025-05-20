@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.partial.base.json",
+  "compilerOptions": {
+    "baseUrl": "./dist/cjs",
+    "noCheck": true,
+    "rootDir": "./dist/cjs"
+  },
+  "include": [
+    "./dist/cjs/**/*"
+  ]
+}

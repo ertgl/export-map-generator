@@ -1,0 +1,41 @@
+$schema: "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json"
+version: "0.2"
+language: "en"
+import:
+  - "@cspell/dict-bash/cspell-ext.json"
+  - "@cspell/dict-css/cspell-ext.json"
+  - "@cspell/dict-en-common-misspellings/cspell-ext.json"
+  - "@cspell/dict-en-gb/cspell-ext.json"
+  - "@cspell/dict-en_us/cspell-ext.json"
+  - "@cspell/dict-filetypes/cspell-ext.json"
+  - "@cspell/dict-git/cspell-ext.json"
+  - "@cspell/dict-html/cspell-ext.json"
+  - "@cspell/dict-html-symbol-entities/cspell-ext.json"
+  - "@cspell/dict-markdown/cspell-ext.json"
+  - "@cspell/dict-node/cspell-ext.json"
+  - "@cspell/dict-npm/cspell-ext.json"
+  - "@cspell/dict-shell/cspell-ext.json"
+  - "@cspell/dict-typescript/cspell-ext.json"
+dictionaryDefinitions:
+  - name: custom
+    path: ./cspell.custom.txt
+    addWords: true
+dictionaries:
+  - bash
+  - css
+  - custom
+  - en-common-misspellings
+  - en-gb
+  - en_us
+  - filetypes
+  - git
+  - html
+  - html-symbol-entities
+  - markdown
+  - node
+  - npm
+  - shell
+  - typescript
+globRoot: "${cwd}"
+useGitignore: true
+noConfigSearch: true

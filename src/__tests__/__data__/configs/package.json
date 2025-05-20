@@ -1,0 +1,9 @@
+{
+  "export-map-generator": {
+    "config": {
+      "sample": {
+        "packageJSON": true
+      }
+    }
+  }
+}

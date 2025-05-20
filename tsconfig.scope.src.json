@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.partial.base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "rootDir": "./src"
+  },
+  "include": [
+    "./src/**/*"
+  ]
+}

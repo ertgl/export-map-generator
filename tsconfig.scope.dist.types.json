@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.partial.base.json",
+  "compilerOptions": {
+    "baseUrl": "./dist/types",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noCheck": true,
+    "rootDir": "./dist/types"
+  },
+  "include": [
+    "./dist/types/**/*"
+  ]
+}

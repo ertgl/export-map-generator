@@ -1,0 +1,20 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.scope.dist.cjs.json"
+    },
+    {
+      "path": "./tsconfig.scope.dist.esm.json"
+    },
+    {
+      "path": "./tsconfig.scope.dist.types.json"
+    },
+    {
+      "path": "./tsconfig.scope.src.json"
+    },
+    {
+      "path": "./tsconfig.scope.project.json"
+    }
+  ]
+}

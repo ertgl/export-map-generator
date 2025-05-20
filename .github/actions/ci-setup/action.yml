@@ -1,0 +1,160 @@
+name: Setup CI
+description: Setup CI environment with a reusable composite action.
+
+inputs:
+  cache-key-for-build:
+    description: 'Cache key for the build directories'
+    required: false
+    default: ''
+  cache-key-for-node-modules:
+    description: 'Cache key for node_modules directories'
+    required: false
+    default: ''
+  cache-key-for-yarn:
+    description: 'Cache key for yarn directories'
+    required: false
+    default: ''
+  generate-cache-for-build:
+    description: 'Should cache the build directories'
+    required: false
+    default: 'true'
+  generate-cache-for-node-modules:
+    description: 'Should cache node_modules directories'
+    required: false
+    default: 'true'
+  generate-cache-for-yarn:
+    description: 'Should cache yarn directories'
+    required: false
+    default: 'true'
+  restore-cache-for-build:
+    description: 'Should restore cache for the build directories'
+    required: false
+    default: 'true'
+  restore-cache-for-node-modules:
+    description: 'Should restore cache for node_modules directories'
+    required: false
+    default: 'true'
+  restore-cache-for-yarn:
+    description: 'Should restore cache for yarn directories'
+    required: false
+    default: 'true'
+
+outputs:
+  final-cache-key-for-build:
+    description: 'The final cache key for build directories'
+    value: ${{ steps.determine-cache-key-for-build.outputs.final-cache-key-for-build }}
+  final-cache-key-for-node-modules:
+    description: 'The final cache key for node_modules directories'
+    value: ${{ steps.determine-cache-key-for-node-modules.outputs.final-cache-key-for-node-modules }}
+  final-cache-key-for-yarn:
+    description: 'The final cache key for yarn directories'
+    value: ${{ steps.determine-cache-key-for-yarn.outputs.final-cache-key-for-yarn }}
+
+runs:
+  using: composite
+  steps:
+    - name: Determine build cache key
+      id: determine-cache-key-for-build
+      shell: bash
+      env:
+        FINAL_CACHE_KEY_FOR_BUILD: ${{ inputs.cache-key-for-build || format('build-{0}-{1}', runner.os, hashFiles('src/**/*', 'yarn.lock')) }}
+      run: echo "final-cache-key-for-build=$(echo "$FINAL_CACHE_KEY_FOR_BUILD")" >> $GITHUB_OUTPUT
+
+    - name: Determine node_modules cache key
+      id: determine-cache-key-for-node-modules
+      shell: bash
+      env:
+        FINAL_CACHE_KEY_FOR_NODE_MODULES: ${{ inputs.cache-key-for-node-modules || format('node-modules-{0}-{1}', runner.os, hashFiles('yarn.lock')) }}
+      run: echo "final-cache-key-for-node-modules=$(echo "$FINAL_CACHE_KEY_FOR_NODE_MODULES")" >> $GITHUB_OUTPUT
+
+    - name: Determine yarn cache key
+      id: determine-cache-key-for-yarn
+      shell: bash
+      env:
+        FINAL_CACHE_KEY_FOR_YARN: ${{ inputs.cache-key-for-yarn || format('yarn-{0}-{1}', runner.os, hashFiles('yarn.lock')) }}
+      run: echo "final-cache-key-for-yarn=$(echo "$FINAL_CACHE_KEY_FOR_YARN")" >> $GITHUB_OUTPUT
+
+    - name: Setup Node.js LTS
+      uses: actions/setup-node@v4
+      with:
+        node-version: lts/*
+        registry-url: 'https://registry.npmjs.org'
+
+    - name: Enable Corepack
+      shell: bash
+      run: corepack enable
+
+    - name: Determine yarn cache directory path
+      id: determine-yarn-cache-directory-path
+      shell: bash
+      run: echo "yarn_cache_directory=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+
+    - name: Restore yarn cache
+      id: restore-cache-for-yarn
+      if: ${{ inputs.restore-cache-for-yarn == 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-yarn.outputs.final-cache-key-for-yarn }}
+        path: ${{ steps.determine-yarn-cache-directory-path.outputs.yarn_cache_directory }}
+
+    - name: Restore node_modules cache
+      id: restore-cache-for-node-modules
+      if: ${{ inputs.restore-cache-for-node-modules == 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-node-modules.outputs.final-cache-key-for-node-modules }}
+        path: |
+          node_modules/
+
+    - name: Install dependencies
+      id: install-dependencies
+      if: ${{ steps.restore-cache-for-node-modules.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: yarn install --immutable
+
+    - name: Cache yarn
+      id: generate-cache-for-yarn
+      if: ${{ inputs.generate-cache-for-yarn == 'true' && steps.restore-cache-for-yarn.outputs.cache-hit != 'true' && steps.install-dependencies.conclusion == 'success' }}
+      uses: actions/cache/save@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-yarn.outputs.final-cache-key-for-yarn }}
+        path: ${{ steps.determine-yarn-cache-directory-path.outputs.yarn_cache_directory }}
+
+    - name: Cache node_modules
+      id: generate-cache-for-node-modules
+      if: ${{ inputs.generate-cache-for-node-modules == 'true' && steps.restore-cache-for-node-modules.outputs.cache-hit != 'true' && steps.install-dependencies.conclusion == 'success' }}
+      uses: actions/cache/save@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-node-modules.outputs.final-cache-key-for-node-modules }}
+        path: |
+          node_modules/
+
+    - name: Restore build cache
+      id: restore-cache-for-build
+      if: ${{ inputs.restore-cache-for-build == 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-build.outputs.final-cache-key-for-build }}
+        path: |
+          dist/
+
+    - name: Prepare
+      id: prepare
+      if: ${{ steps.restore-cache-for-build.outputs.cache-hit != 'true' }}
+      shell: bash
+      run: yarn prepare
+
+    - name: Build
+      id: build
+      if: ${{ steps.restore-cache-for-build.outputs.cache-hit != 'true' && steps.prepare.conclusion == 'success' }}
+      shell: bash
+      run: yarn build
+
+    - name: Cache build
+      id: generate-cache-for-build
+      if: ${{ inputs.generate-cache-for-build == 'true' && steps.restore-cache-for-build.outputs.cache-hit != 'true' && steps.build.conclusion == 'success' }}
+      uses: actions/cache/save@v4
+      with:
+        key: ${{ steps.determine-cache-key-for-build.outputs.final-cache-key-for-build }}
+        path: |
+          dist/

@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.scope.src.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "outDir": "./dist/types"
+  },
+  "exclude": [
+    "**/__tests__/**/*"
+  ]
+}

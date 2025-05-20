@@ -1,0 +1,11 @@
+# Brace style
+allman
+
+# JavaScript, TypeScript, JSX
+cjsx
+ctsx
+mjsx
+mtsx
+
+# Node.js FS
+dirents
