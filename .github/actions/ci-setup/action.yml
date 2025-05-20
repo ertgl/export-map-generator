@@ -94,11 +94,6 @@ runs:
       shell: bash
       run: yarn prepare
 
-    - name: Bootstrap
-      if: steps.restore-build-cache.outputs.cache-hit != 'true'
-      shell: bash
-      run: yarn bootstrap
-
     - name: Build CJS
       id: build-cjs
       if: steps.restore-build-cache.outputs.cache-hit != 'true'
@@ -117,9 +112,15 @@ runs:
       shell: bash
       run: yarn build::types
 
+    - name: Update package exports
+      id: update-package-exports
+      if: steps.restore-build-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: yarn update-package-exports
+
     - name: Cache build
       id: cache-build
-      if: ${{ inputs.cache-build == 'true' && steps.restore-build-cache.outputs.cache-hit != 'true' && steps.build-cjs.conclusion == 'success' && steps.build-esm.conclusion == 'success' && steps.build-types.conclusion == 'success' }}
+      if: ${{ inputs.cache-build == 'true' && steps.restore-build-cache.outputs.cache-hit != 'true' && steps.build-cjs.conclusion == 'success' && steps.build-esm.conclusion == 'success' && steps.build-types.conclusion == 'success' && steps.update-package-exports.conclusion == 'success' }}
       uses: actions/cache/save@v4
       with:
         path: dist
