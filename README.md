@@ -27,140 +27,187 @@ analyzing distribution files. Declarative, extensible, and build-tool agnostic.
 ## Overview
 
 `export-map-generator` provides a plugin-oriented pipeline that allows
-developers to control, extend, or override every part of the export-map
-generation process.
+developers to control, extend, or override every part of the `exports` field
+generation process, usually for `package.json` files.
 
 ### Features
 
-The generator is built around several core ideas, all of which are
-designed to enhance the developer experience and ensure that the generated
-export maps are correct and easy to work with.
+The generator is built around several core ideas, all designed to enhance the
+developer experience.
 
 #### Convention-first, plugin-friendly
 
 Start with presets, extend or override as needed.
 
-```ts
-export default defineConfig({
-  presets: [
-    dts(),
-    cjs(),
-    esm(),
-    standard(),
-  ],
-});
-```
+<details open>
+  <summary>
+    <b>
+      Demonstration: Using the built-in presets
+    </b>
+  </summary>
+
+  ```ts
+  export default defineConfig({
+    presets: [
+      dts(),
+      cjs(),
+      esm(),
+      standard(),
+    ],
+  });
+  ```
+</details>
 
 #### Output-driven
 
-Works from your `dist/`, not your source.
+Scans the distribution folders, not the source files.
 
-```text
-dist
-  ├── cjs
-  │   └── array.cjs
-  ├── esm
-  │   └── array.mjs
-  └── types
-      └── array.d.ts
-```
+<details open>
+  <summary>
+    <b>
+      Demonstration: Sample distribution tree structure
+    </b>
+  </summary>
+
+  ```text
+  dist
+    ├── cjs
+    │   └── array.cjs
+    ├── esm
+    │   └── array.mjs
+    └── types
+        └── array.d.ts
+  ```
+</details>
 
 #### Precise path resolution
 
 Supports CJS, ESM, DTS, hybrid modules, and more.
 
-```json
-{
-  "exports": {
-    "./array.js": {
-      "types": "./dist/types/array.d.ts",
-      "import": "./dist/esm/array.mjs",
-      "require": "./dist/cjs/array.cjs",
-      "default": "./src/array.ts"
+<details open>
+  <summary>
+    <b>
+      Demonstration: Generated exports structure with multiple formats
+    </b>
+  </summary>
+
+  ```json
+  {
+    "exports": {
+      "./array.js": {
+        "types": "./dist/types/array.d.ts",
+        "import": "./dist/esm/array.mjs",
+        "require": "./dist/cjs/array.cjs",
+        "default": "./src/array.ts"
+      }
     }
   }
-}
-```
+  ```
+</details>
 
 #### Path conflict prevention
 
 Resolves path ambiguities by organizing the exports in correct order.
 
-```json
-{
-  "exports": {
-    "./array.d.ts": {
-      "types": "./dist/types/array.d.ts",
-      "default": "./src/array.ts"
-    },
-    "./array.js": {
-      "types": "./dist/types/array.d.ts",
-      "import": "./dist/esm/array.mjs",
-      "require": "./dist/cjs/array.cjs",
-      "default": "./src/array.ts"
-    },
-    "./array": {
-      "types": "./dist/types/array.d.ts",
-      "import": "./dist/esm/array.mjs",
-      "require": "./dist/cjs/array.cjs",
-      "default": "./src/array.ts"
+<details>
+  <summary>
+    <b>
+      Demonstration: Multiple import paths for the same file
+    </b>
+  </summary>
+
+  ```json
+  {
+    "exports": {
+      "./array.d.ts": {
+        "types": "./dist/types/array.d.ts",
+        "default": "./src/array.ts"
+      },
+      "./array.js": {
+        "types": "./dist/types/array.d.ts",
+        "import": "./dist/esm/array.mjs",
+        "require": "./dist/cjs/array.cjs",
+        "default": "./src/array.ts"
+      },
+      "./array": {
+        "types": "./dist/types/array.d.ts",
+        "import": "./dist/esm/array.mjs",
+        "require": "./dist/cjs/array.cjs",
+        "default": "./src/array.ts"
+      }
     }
   }
-}
-```
+  ```
+</details>
 
 #### Built-in support for barrel files
 
 Detects and generates exports for barrel files (index files) in directories.
 
-```ts
-export default defineConfig({
-  extensions: [
-    barrel(),
-  ],
-});
-```
+<details>
+  <summary>
+    <b>
+      Demonstration: Barrel file detection
+    </b>
+  </summary>
 
-```json
-{
-  "exports": {
-    "./index.js": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs",
-      "default": "./src/index.ts"
-    },
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs",
-      "default": "./src/index.ts"
+  ```ts
+  export default defineConfig({
+    extensions: [
+      barrel(),
+    ],
+  });
+  ```
+
+  ```json
+  {
+    "exports": {
+      "./index.js": {
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/esm/index.mjs",
+        "require": "./dist/cjs/index.cjs",
+        "default": "./src/index.ts"
+      },
+      ".": {
+        "types": "./dist/types/index.d.ts",
+        "import": "./dist/esm/index.mjs",
+        "require": "./dist/cjs/index.cjs",
+        "default": "./src/index.ts"
+      }
     }
   }
-}
-```
+  ```
+</details>
 
 #### CLI or programmatic API
 
 Use via terminal or integrate into custom flows.
 
-```sh
-⋊> export-map-generator
-Usage: export-map-generator [options] [command]
+<details>
+  <summary>
+    <b>
+      Demonstration: CLI usage
+    </b>
+  </summary>
 
-Options:
-  -V, --version        output the version number
-  --cwd <PATH>         path to the working directory
-  -c, --config <PATH>  path to the configuration file
-  --dry-run            preview changes without writing to disk (default: false)
-  -h, --help           display help for command
+  ```sh
+  ⋊> export-map-generator
+  Usage: export-map-generator [options] [command]
 
-Commands:
-  config               configuration commands
-  context              context commands
-  generate [options]   generate export map
-  help [command]       display help for command
-```
+  Options:
+    -V, --version        output the version number
+    --cwd <PATH>         path to the working directory
+    -c, --config <PATH>  path to the configuration file
+    --dry-run            preview changes without writing to disk (default: false)
+    -h, --help           display help for command
+
+  Commands:
+    config               configuration commands
+    context              context commands
+    generate [options]   generate export map
+    help [command]       display help for command
+  ```
+</details>
 
 ## Installation
 
@@ -462,7 +509,7 @@ export patterns and conventions.
 <details>
   <summary>
     <b>
-      Example: Using the generic preset
+      Example: Using the generic preset for arbitrary files
     </b>
   </summary>
 
@@ -498,8 +545,9 @@ export patterns and conventions.
 
 ### Package-JSON Preset
 
-The Package-JSON preset is designed for projects that include the
-`package.json` file in their distribution.
+The package-json preset ensures that `package.json` file is explicitly
+specified in the `exports`, which is required by some environments to access
+metadata safely.
 
 <details>
   <summary>
