@@ -26,9 +26,9 @@ analyzing distribution files. Declarative, extensible, and build-tool agnostic.
 
 ## Overview
 
-`export-map-generator` provides a plugin-oriented pipeline that allows
-developers to control, extend, or override every part of the `exports` field
-generation process, usually for `package.json` files.
+`export-map-generator` provides a plugin-oriented pipeline for full control
+over the generation of the exports -typically for `package.json` files-
+allowing developers to customize, extend, or override every step of the process.
 
 ### Features
 
@@ -37,12 +37,13 @@ developer experience.
 
 #### Convention-first, plugin-friendly
 
-Start with presets, extend or override as needed.
+Start with presets, extend or override as needed. From file-system API to entry
+generation, every step is customizable.
 
 <details open>
   <summary>
     <b>
-      Demonstration: Using the built-in presets
+      Demonstration: Configuration with the built-in presets
     </b>
   </summary>
 
@@ -60,12 +61,14 @@ Start with presets, extend or override as needed.
 
 #### Output-driven
 
-Scans the distribution folders, not the source files.
+Scans the distribution folders instead of the source files. This ensures that
+the actual distribution files are used for generating the exports, causing zero
+extra I/O overhead for the task.
 
-<details open>
+<details>
   <summary>
     <b>
-      Demonstration: Sample distribution tree structure
+      Demonstration: Tree structure of a sample distribution folder
     </b>
   </summary>
 
@@ -80,14 +83,15 @@ Scans the distribution folders, not the source files.
   ```
 </details>
 
-#### Precise path resolution
+#### Precise entry-point resolution
 
-Supports CJS, ESM, DTS, hybrid modules, and more.
+Supports CJS, ESM, DTS, hybrid modules, and more. The import conditions are
+organized in the correct order to prevent conflicts.
 
-<details open>
+<details>
   <summary>
     <b>
-      Demonstration: Generated exports structure with multiple formats
+      Demonstration: Exports generated for a sample dual-package module
     </b>
   </summary>
 
@@ -105,14 +109,15 @@ Supports CJS, ESM, DTS, hybrid modules, and more.
   ```
 </details>
 
-#### Path conflict prevention
+#### Path ambiguity resolution
 
-Resolves path ambiguities by organizing the exports in correct order.
+Resolves path ambiguities by organizing the exported entries in the correct
+order to prevent overlapping import paths.
 
 <details>
   <summary>
     <b>
-      Demonstration: Multiple import paths for the same file
+      Demonstration: Multiple import paths generated for the same file
     </b>
   </summary>
 
@@ -142,12 +147,13 @@ Resolves path ambiguities by organizing the exports in correct order.
 
 #### Built-in support for barrel files
 
-Detects and generates exports for barrel files (index files) in directories.
+Detects and generates exports for barrel files (index files) in the root and
+subdirectories.
 
 <details>
   <summary>
     <b>
-      Demonstration: Barrel file detection
+      Demonstration: Generating exports from directories
     </b>
   </summary>
 
@@ -186,7 +192,20 @@ Use via terminal or integrate into custom flows.
 <details>
   <summary>
     <b>
-      Demonstration: CLI usage
+      Demonstration: Generating the export map programmatically
+    </b>
+  </summary>
+
+  ```ts
+  const context = await resolveContext();
+  const exportMap = await generateExportMapByContext(context);
+  ```
+</details>
+
+<details>
+  <summary>
+    <b>
+      Demonstration: Listing the CLI commands
     </b>
   </summary>
 
@@ -231,12 +250,13 @@ npm install --save-dev commander cosmiconfig pretty-format
 ## Usage
 
 By default, the generator does not include any activated functionality. This
-design ensures that the export strategy remains explicit and intentional. All
-logic -from analyzing directories to writing the final export map- is handled
-via extensions and presets.
+design ensures that the export strategy remains explicit and intentional. From
+analyzing directories to writing the final export map, all logic is handled via
+extensions and presets that are explicitly activated in the configuration.
 
-The library includes a set of built-in presets that can be used to quickly set
-up the export map generation without needing to define everything from scratch.
+Built-in presets can be used to quickly setup the generator with common export
+patterns and conventions. For the list of available presets, refer to the
+[Presets](#presets) section.
 
 ### CLI Usage
 
@@ -257,7 +277,7 @@ export-map-generator --dry-run generate --stdout
 
 For programmatic usage, you can import the library and use it in your scripts:
 
-```javascript
+```ts
 import { resolveContext } from "export-map-generator/context";
 import { generateExportMapByContext } from "export-map-generator/export-map";
 
@@ -406,10 +426,56 @@ CommonJS module format.
   ```
 </details>
 
+### CSS Preset
+
+The CSS preset is designed for distributing stylesheet files.
+
+<details>
+  <summary>
+    <b>
+      Example: Using the CSS preset
+    </b>
+  </summary>
+
+  ```ts
+  import defineConfig from "export-map-generator/config";
+  import css from "export-map-generator/presets/css";
+
+  export default defineConfig({
+    presets: [
+      css(),
+    ],
+  });
+  ```
+</details>
+
+<details>
+  <summary>
+    <b>
+      Example: Using the CSS preset for Sass source files
+    </b>
+  </summary>
+
+  ```ts
+  import defineConfig from "export-map-generator/config";
+  import css from "export-map-generator/presets/css";
+
+  export default defineConfig({
+    presets: [
+      css({
+        src: {
+          extension: ".sass",
+        },
+      }),
+    ],
+  });
+  ```
+</details>
+
 ### DTS Preset
 
-The DTS preset is designed for projects that distribute TypeScript
-declarations.
+The DTS preset is designed for projects that distribute TypeScript declaration
+files.
 
 <details>
   <summary>
