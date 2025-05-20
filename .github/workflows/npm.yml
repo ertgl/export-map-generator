@@ -1,0 +1,105 @@
+name: npm
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Action to perform"
+        required: true
+        type: choice
+        options:
+          - publish
+      repositoryName:
+        description: "Confirm repository name"
+        required: true
+        type: string
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  CI: true
+
+jobs:
+  prerequisites:
+    runs-on: ubuntu-latest
+    outputs:
+      should-validate: ${{ steps.determine-prerequisites.outputs.should-validate }}
+      should-validate-repository-name: ${{ steps.determine-prerequisites.outputs.should-validate-repository-name }}
+      should-build: ${{ steps.determine-prerequisites.outputs.should-build }}
+      should-test: ${{ steps.determine-prerequisites.outputs.should-test }}
+      should-publish: ${{ steps.determine-prerequisites.outputs.should-publish }}
+    steps:
+      - name: Determine prerequisites
+        id: determine-prerequisites
+        env:
+          INPUT_ACTION: ${{ github.event.inputs.action }}
+        run: |
+          if [[ "$INPUT_ACTION" == "publish" ]];
+          then
+            echo "should-validate=true" >> "$GITHUB_OUTPUT"
+            echo "should-validate-repository-name=true" >> "$GITHUB_OUTPUT"
+            echo "should-build=true" >> "$GITHUB_OUTPUT"
+            echo "should-test=true" >> "$GITHUB_OUTPUT"
+            echo "should-publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  validation:
+    if: ${{ needs.prerequisites.outputs.should-validate == 'true' }}
+    runs-on: ubuntu-latest
+    needs: [prerequisites]
+    steps:
+      - name: Validate repository name
+        if: ${{ needs.prerequisites.outputs.should-validate-repository-name == 'true' }}
+        env:
+          INPUT_REPOSITORY_NAME: ${{ github.event.inputs.repositoryName }}
+          REPOSITORY_NAME: ${{ github.repository }}
+        run: |
+          if [[ "$INPUT_REPOSITORY_NAME" != "$REPOSITORY_NAME" ]];
+          then
+            echo "Repository name mismatch: "$INPUT_REPOSITORY_NAME" != "$REPOSITORY_NAME""
+            exit 1
+          fi
+
+  build:
+    if: ${{ needs.prerequisites.outputs.should-build == 'true' && needs.validation.result != 'failure' }}
+    runs-on: ubuntu-latest
+    needs: [prerequisites, validation]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/ci-setup
+
+  test:
+    if: ${{ needs.prerequisites.outputs.should-test == 'true' && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    needs: [prerequisites, build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/ci-setup
+      - name: Test
+        run: yarn test
+
+  publish:
+    if: ${{ needs.prerequisites.outputs.should-publish == 'true' && needs.prerequisites.result == 'success' && needs.test.result == 'success' }}
+    runs-on: ubuntu-latest
+    needs: [prerequisites, test]
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: ./.github/actions/ci-setup
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --access public --provenance
