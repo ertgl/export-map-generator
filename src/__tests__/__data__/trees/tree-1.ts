@@ -11,7 +11,7 @@ export const TREE_1_DIRENTS = {
   [`${TEST_DATA_TREES_DIRECTORY_PATH}/lib/a/b/c.js`]: "",
   [`${TEST_DATA_TREES_DIRECTORY_PATH}/lib/a/b/c/d.js`]: "",
   [`${TEST_DATA_TREES_DIRECTORY_PATH}/lib/a/c.js`]: "",
-  [`${TEST_DATA_TREES_DIRECTORY_PATH}/package.json`]: "{}",
+  [`${TEST_DATA_TREES_DIRECTORY_PATH}/package.json`]: "{}\n",
 } as const satisfies DirectoryJSON;
 
 export const TREE_1_VOLUME = Volume.fromJSON(

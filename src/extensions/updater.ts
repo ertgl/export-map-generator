@@ -32,6 +32,7 @@ export type PackageJSONUpdaterExtensionOptions = {
   indent?: null | number;
   packageJSONFilePath?: null | PathLike;
   safe?: boolean | null | Omit<SafeFileWriterOptions, "encoding" | "fs">;
+  trailingNewLine?: "auto" | boolean | null;
 };
 
 export class PackageJSONUpdaterExtension extends AbstractExtension
@@ -88,11 +89,25 @@ export class PackageJSONUpdaterExtension extends AbstractExtension
       exportMap,
     );
 
-    const newPackageJSONFileContent = JSON.stringify(
+    let newPackageJSONFileContent = JSON.stringify(
       newPackageJSON,
       null,
       this.options.indent ?? 2,
     );
+
+    const trailingNewLine = this.options.trailingNewLine ?? "auto";
+
+    if (trailingNewLine === "auto")
+    {
+      if (packageJSONFileContent.endsWith("\n"))
+      {
+        newPackageJSONFileContent += "\n";
+      }
+    }
+    else if (trailingNewLine)
+    {
+      newPackageJSONFileContent += "\n";
+    }
 
     if (this.options.safe ?? false)
     {
