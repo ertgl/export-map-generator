@@ -1,7 +1,7 @@
 {
   "name": "export-map-generator",
   "description": "Declarative and extensible tooling to automate exports generation for modern multi-format packages.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
