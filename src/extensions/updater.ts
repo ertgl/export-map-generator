@@ -26,12 +26,12 @@ export type PackageJSONFileUpdaterExtensionFS = (
 );
 
 export type PackageJSONUpdaterExtensionOptions = {
-  backup?: boolean | null | Omit<SafeFileWriterOptions, "encoding" | "fs">;
   encoding?: BufferEncoding | null;
   fs?: null | PackageJSONFileUpdaterExtensionFS;
   fsync?: boolean | null;
   indent?: null | number;
   packageJSONFilePath?: null | PathLike;
+  safe?: boolean | null | Omit<SafeFileWriterOptions, "encoding" | "fs">;
 };
 
 export class PackageJSONUpdaterExtension extends AbstractExtension
@@ -94,19 +94,19 @@ export class PackageJSONUpdaterExtension extends AbstractExtension
       this.options.indent ?? 2,
     );
 
-    if (this.options.backup ?? false)
+    if (this.options.safe ?? false)
     {
-      const backupOptions = (
-        this.options.backup === true
+      const safeFileWriterOptions = (
+        this.options.safe === true
           ? {}
-          : this.options.backup ?? {}
+          : this.options.safe ?? {}
       );
 
       await writeFileSafe(
         resolvedPackageJSONFilePath,
         newPackageJSONFileContent,
         {
-          ...backupOptions,
+          ...safeFileWriterOptions,
           encoding: this.options.encoding ?? "utf-8",
           fs: {
             access: fs.access ?? context.fs.access,

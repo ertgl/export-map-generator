@@ -9,7 +9,7 @@ const EXPORTS_CONFIG = defineConfig({
   presets: [
     standard({
       updater: {
-        backup: true,
+        safe: true,
       },
     }),
 
