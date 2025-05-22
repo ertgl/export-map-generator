@@ -2,19 +2,19 @@ name: Setup CI
 description: Setup CI environment
 
 inputs:
-  build-cache-key:
-    description: 'Cache key for the build'
-    required: false
-    default: ''
   cache-build:
     description: 'Should cache the build'
     required: false
     default: 'true'
+  cache-key-build:
+    description: 'Cache key for the build'
+    required: false
+    default: ''
   cache-node-modules:
     description: 'Should cache node_modules'
     required: false
     default: 'true'
-  node-modules-cache-key:
+  cache-key-for-node-modules:
     description: 'Cache key for node_modules'
     required: false
     default: ''
@@ -28,26 +28,26 @@ inputs:
     default: 'true'
 
 outputs:
-  final-build-cache-key:
+  final-cache-key-build:
     description: 'The final build cache key'
-    value: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}
+    value: ${{ steps.determine-cache-key-build.outputs.final-cache-key-build }}
 
 runs:
   using: composite
   steps:
     - name: Determine build cache key
-      id: determine-build-cache-key
+      id: determine-cache-key-build
       shell: bash
       env:
-        FINAL_BUILD_CACHE_KEY: ${{ inputs.build-cache-key || format('build-cache-{0}-{1}', runner.os, hashFiles('yarn.lock', 'dist/**/*')) }}
-      run: echo "final-build-cache-key=$(echo "$FINAL_BUILD_CACHE_KEY")" >> $GITHUB_OUTPUT
+        FINAL_BUILD_CACHE_KEY: ${{ inputs.cache-key-build || format('build-cache-{0}-{1}', runner.os, hashFiles('yarn.lock', 'src/**/*', 'babel.config.cjs.cjs', 'babel.config.esm.cjs', 'package.json', 'tsconfig.output.types.json', 'tsconfig.partial.base.json', 'tsconfig.scope.src.json')) }}
+      run: echo "final-cache-key-build=$(echo "$FINAL_BUILD_CACHE_KEY")" >> $GITHUB_OUTPUT
 
     - name: Determine node_modules cache key
-      id: determine-node-modules-cache-key
+      id: determine-cache-key-for-node-modules
       shell: bash
       env:
-        FINAL_NODE_MODULES_CACHE_KEY: ${{ inputs.node-modules-cache-key || format('node-modules-cache-{0}-{1}', runner.os, hashFiles('yarn.lock')) }}
-      run: echo "final-node-modules-cache-key=$(echo "$FINAL_NODE_MODULES_CACHE_KEY")" >> $GITHUB_OUTPUT
+        FINAL_NODE_MODULES_CACHE_KEY: ${{ inputs.cache-key-for-node-modules || format('node-modules-cache-{0}-{1}', runner.os, hashFiles('yarn.lock')) }}
+      run: echo "final-cache-key-for-node-modules=$(echo "$FINAL_NODE_MODULES_CACHE_KEY")" >> $GITHUB_OUTPUT
 
     - name: Setup Node.js LTS
       uses: actions/setup-node@v4
@@ -65,7 +65,7 @@ runs:
       uses: actions/cache/restore@v4
       with:
         path: dist
-        key: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}
+        key: ${{ steps.determine-cache-key-build.outputs.final-cache-key-build }}
 
     - name: Restore node_modules cache
       id: restore-node-modules-cache
@@ -73,7 +73,7 @@ runs:
       uses: actions/cache/restore@v4
       with:
         path: node_modules
-        key: ${{ steps.determine-node-modules-cache-key.outputs.final-node-modules-cache-key }}
+        key: ${{ steps.determine-cache-key-for-node-modules.outputs.final-cache-key-for-node-modules }}
 
     - name: Install dependencies
       id: install-dependencies
@@ -87,7 +87,7 @@ runs:
       uses: actions/cache/save@v4
       with:
         path: node_modules
-        key: ${{ steps.determine-node-modules-cache-key.outputs.final-node-modules-cache-key }}
+        key: ${{ steps.determine-cache-key-for-node-modules.outputs.final-cache-key-for-node-modules }}
 
     - name: Prepare
       if: ${{ steps.restore-build-cache.outputs.cache-hit != 'true' }}
@@ -124,4 +124,4 @@ runs:
       uses: actions/cache/save@v4
       with:
         path: dist
-        key: ${{ steps.determine-build-cache-key.outputs.final-build-cache-key }}
+        key: ${{ steps.determine-cache-key-build.outputs.final-cache-key-build }}
