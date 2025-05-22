@@ -16,6 +16,7 @@ analyzing distribution files. Declarative, extensible, and build-tool agnostic.
 - [Extensions](#extensions)
 - [Presets](#presets)
   - [CJS Preset](#cjs-preset)
+  - [CSS Preset](#css-preset)
   - [DTS Preset](#dts-preset)
   - [ESM Preset](#esm-preset)
   - [Generic Preset](#generic-preset)
