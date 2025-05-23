@@ -23,6 +23,15 @@ export class JSONPreset extends GenericPreset
     extension: ConditionalImportPathExtension,
   ): ImportCondition[]
   {
+    if (extension === ".json")
+    {
+      return [
+        "import",
+        "require",
+        "default",
+      ];
+    }
+
     return [
       "default",
     ];
