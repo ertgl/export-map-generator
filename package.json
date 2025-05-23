@@ -894,6 +894,34 @@
       "require": "./dist/cjs/presets/js.cjs",
       "default": "./src/presets/js.ts"
     },
+    "./presets/json.cjs": {
+      "types": "./dist/types/presets/json.d.ts",
+      "import": "./dist/esm/presets/json.mjs",
+      "require": "./dist/cjs/presets/json.cjs",
+      "default": "./src/presets/json.ts"
+    },
+    "./presets/json.d.ts": {
+      "types": "./dist/types/presets/json.d.ts",
+      "default": "./src/presets/json.ts"
+    },
+    "./presets/json.js": {
+      "types": "./dist/types/presets/json.d.ts",
+      "import": "./dist/esm/presets/json.mjs",
+      "require": "./dist/cjs/presets/json.cjs",
+      "default": "./src/presets/json.ts"
+    },
+    "./presets/json.mjs": {
+      "types": "./dist/types/presets/json.d.ts",
+      "import": "./dist/esm/presets/json.mjs",
+      "require": "./dist/cjs/presets/json.cjs",
+      "default": "./src/presets/json.ts"
+    },
+    "./presets/json": {
+      "types": "./dist/types/presets/json.d.ts",
+      "import": "./dist/esm/presets/json.mjs",
+      "require": "./dist/cjs/presets/json.cjs",
+      "default": "./src/presets/json.ts"
+    },
     "./presets/js": {
       "types": "./dist/types/presets/js.d.ts",
       "import": "./dist/esm/presets/js.mjs",

@@ -20,6 +20,7 @@ analyzing distribution files. Declarative, extensible, and build-tool agnostic.
   - [DTS Preset](#dts-preset)
   - [ESM Preset](#esm-preset)
   - [Generic Preset](#generic-preset)
+  - [JSON Preset](#json-preset)
   - [Package-JSON Preset](#package-json-preset)
   - [Standard Preset](#standard-preset)
 - [Practical Example](#practical-example)
@@ -605,6 +606,29 @@ export patterns and conventions.
           extension: ".license"
         },
       }),
+    ],
+  });
+  ```
+</details>
+
+### JSON Preset
+
+The JSON preset is designed for distributing JSON files.
+
+<details>
+  <summary>
+    <b>
+      Example: Using the JSON preset
+    </b>
+  </summary>
+
+  ```ts
+  import defineConfig from "export-map-generator/config";
+  import json from "export-map-generator/presets/json";
+
+  export default defineConfig({
+    presets: [
+      json(),
     ],
   });
   ```
