@@ -3783,12 +3783,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-plugin-transform-import-source@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "babel-plugin-transform-import-source@npm:1.0.0"
+"babel-plugin-transform-import-source@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "babel-plugin-transform-import-source@npm:2.1.0"
   dependencies:
     "@babel/helper-plugin-utils": "npm:^7.25.9"
-  checksum: 10c0/65e13f0aaad7179315d9bd3996441bf1a57197fbcc550ea9cea38b9668c340b104bca00f6a5c9dd58e1881413b17c6fa9ef3a0cfbd03673c681335b1db6a9ff8
+  checksum: 10c0/16fa2240713c37c088e3645dd4515a6b516a2b4c6f2940de1ca0652485f7abfce89adb1ec966b912bb9f45b47617172a93c229690fbd06a395b24e5a790f9528
   languageName: node
   linkType: hard
 
@@ -4833,7 +4833,7 @@ __metadata:
     "@types/jest": "npm:^29.5.14"
     "@types/node": "npm:^22.15.19"
     babel-jest: "npm:^29.7.0"
-    babel-plugin-transform-import-source: "npm:^1.0.0"
+    babel-plugin-transform-import-source: "npm:^2.1.0"
     commander: "npm:^14.0.0"
     cosmiconfig: "npm:^9.0.0"
     eslint: "npm:^9.27.0"
