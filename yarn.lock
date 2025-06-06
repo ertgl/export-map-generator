@@ -2565,15 +2565,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/core@npm:^0.10.0":
-  version: 0.10.0
-  resolution: "@eslint/core@npm:0.10.0"
-  dependencies:
-    "@types/json-schema": "npm:^7.0.15"
-  checksum: 10c0/074018075079b3ed1f14fab9d116f11a8824cdfae3e822badf7ad546962fafe717a31e61459bad8cc59cf7070dc413ea9064ddb75c114f05b05921029cde0a64
-  languageName: node
-  linkType: hard
-
 "@eslint/core@npm:^0.12.0":
   version: 0.12.0
   resolution: "@eslint/core@npm:0.12.0"
@@ -2638,17 +2629,17 @@ __metadata:
   linkType: hard
 
 "@eslint/markdown@npm:^6.4.0":
-  version: 6.4.0
-  resolution: "@eslint/markdown@npm:6.4.0"
+  version: 6.5.0
+  resolution: "@eslint/markdown@npm:6.5.0"
   dependencies:
-    "@eslint/core": "npm:^0.10.0"
-    "@eslint/plugin-kit": "npm:^0.2.5"
+    "@eslint/core": "npm:^0.14.0"
+    "@eslint/plugin-kit": "npm:^0.3.1"
     mdast-util-from-markdown: "npm:^2.0.2"
     mdast-util-frontmatter: "npm:^2.0.1"
     mdast-util-gfm: "npm:^3.0.0"
     micromark-extension-frontmatter: "npm:^2.0.0"
     micromark-extension-gfm: "npm:^3.0.0"
-  checksum: 10c0/783907fa51e8102d659a5d339600c85ee8f0606db2795f0fa855102149d45906c73e32d1bf4d670cae7aaab250c414dad5f6dcbc41f1e234ffa5877cc069d2b8
+  checksum: 10c0/96ff37cf42dccc952ebf52e18e36129ddf4b9bce045af5ddde7eaab0c5d3e41b2fe9ff482bb3bd4f9341409b97593a6f0ba26fc42eb323e76723770ff9ffdeb7
   languageName: node
   linkType: hard
 
@@ -2659,7 +2650,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/plugin-kit@npm:^0.2.5, @eslint/plugin-kit@npm:^0.2.7":
+"@eslint/plugin-kit@npm:^0.2.7":
   version: 0.2.8
   resolution: "@eslint/plugin-kit@npm:0.2.8"
   dependencies:
@@ -3348,11 +3339,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^22.15.19":
-  version: 22.15.29
-  resolution: "@types/node@npm:22.15.29"
+  version: 22.15.30
+  resolution: "@types/node@npm:22.15.30"
   dependencies:
     undici-types: "npm:~6.21.0"
-  checksum: 10c0/602cc88c6150780cd9b5b44604754e0ce13983ae876a538861d6ecfb1511dff289e5576fffd26c841cde2142418d4bb76e2a72a382b81c04557ccb17cff29e1d
+  checksum: 10c0/ca330ac0e7fd502686d6df115fcc606aba46fd334220f749bbba2f639accdadcb23f7900603ceccdc8240be736739cad5c0b87c0fa92c9255a4dff245f07d664
   languageName: node
   linkType: hard
 
