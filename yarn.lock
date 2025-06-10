@@ -5216,7 +5216,7 @@ __metadata:
     husky: "npm:^9.1.7"
     jest: "npm:^30.0.0"
     memfs: "npm:^4.17.2"
-    pretty-format: "npm:^29.7.0"
+    pretty-format: "npm:^30.0.0"
     rimraf: "npm:^6.0.1"
     typescript: "npm:^5.8.3"
     typescript-eslint: "npm:^8.32.1"
@@ -7959,7 +7959,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.0.0":
+"pretty-format@npm:30.0.0, pretty-format@npm:^30.0.0":
   version: 30.0.0
   resolution: "pretty-format@npm:30.0.0"
   dependencies:

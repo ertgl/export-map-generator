@@ -80,7 +80,7 @@
     "husky": "^9.1.7",
     "jest": "^30.0.0",
     "memfs": "^4.17.2",
-    "pretty-format": "^29.7.0",
+    "pretty-format": "^30.0.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1"
