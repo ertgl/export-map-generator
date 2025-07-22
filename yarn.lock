@@ -3059,6 +3059,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/schemas@npm:30.0.5":
+  version: 30.0.5
+  resolution: "@jest/schemas@npm:30.0.5"
+  dependencies:
+    "@sinclair/typebox": "npm:^0.34.0"
+  checksum: 10c0/449dcd7ec5c6505e9ac3169d1143937e67044ae3e66a729ce4baf31812dfd30535f2b3b2934393c97cfdf5984ff581120e6b38f62b8560c8b5b7cc07f4175f65
+  languageName: node
+  linkType: hard
+
 "@jest/snapshot-utils@npm:30.0.4":
   version: 30.0.4
   resolution: "@jest/snapshot-utils@npm:30.0.4"
@@ -8094,7 +8103,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.0.2, pretty-format@npm:^30.0.0":
+"pretty-format@npm:30.0.2":
   version: 30.0.2
   resolution: "pretty-format@npm:30.0.2"
   dependencies:
@@ -8102,6 +8111,17 @@ __metadata:
     ansi-styles: "npm:^5.2.0"
     react-is: "npm:^18.3.1"
   checksum: 10c0/cf542dc2d0be95e2b1c6e3a397a4fc13fce1c9f8feed6b56165c0d23c7a83423abb6b032ed8e3e1b7c1c0709f9b117dd30b5185f107e58f8766616be6de84850
+  languageName: node
+  linkType: hard
+
+"pretty-format@npm:^30.0.0":
+  version: 30.0.5
+  resolution: "pretty-format@npm:30.0.5"
+  dependencies:
+    "@jest/schemas": "npm:30.0.5"
+    ansi-styles: "npm:^5.2.0"
+    react-is: "npm:^18.3.1"
+  checksum: 10c0/9f6cf1af5c3169093866c80adbfdad32f69c692b62f24ba3ca8cdec8519336123323f896396f9fa40346a41b197c5f6be15aec4d8620819f12496afaaca93f81
   languageName: node
   linkType: hard
 
