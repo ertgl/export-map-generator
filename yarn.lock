@@ -2670,7 +2670,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/core@npm:^0.15.0":
+"@eslint/core@npm:^0.15.0, @eslint/core@npm:^0.15.1":
   version: 0.15.1
   resolution: "@eslint/core@npm:0.15.1"
   dependencies:
@@ -2704,30 +2704,30 @@ __metadata:
   linkType: hard
 
 "@eslint/json@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "@eslint/json@npm:0.13.0"
+  version: 0.13.1
+  resolution: "@eslint/json@npm:0.13.1"
   dependencies:
-    "@eslint/core": "npm:^0.14.0"
-    "@eslint/plugin-kit": "npm:^0.3.1"
-    "@humanwhocodes/momoa": "npm:^3.3.4"
+    "@eslint/core": "npm:^0.15.1"
+    "@eslint/plugin-kit": "npm:^0.3.4"
+    "@humanwhocodes/momoa": "npm:^3.3.8"
     natural-compare: "npm:^1.4.0"
-  checksum: 10c0/d3864c65604103345677d9dbab48dd4fa6266594165cbdbaa04418bba1381920b72f17f3c5a4a528bfe10ee4a72ef8e9e25c90769befe66d9e88f28ebe4dd865
+  checksum: 10c0/8dae443777aa2d6cc8d24e3185fb718c527cecd33af65a776ebc1e2a6f7856cac6238daff03d57bbcd31c8c0ede4fa3e9f8dd69531b5eedd61d53517fe65502d
   languageName: node
   linkType: hard
 
 "@eslint/markdown@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "@eslint/markdown@npm:7.0.0"
+  version: 7.1.0
+  resolution: "@eslint/markdown@npm:7.1.0"
   dependencies:
-    "@eslint/core": "npm:^0.14.0"
-    "@eslint/plugin-kit": "npm:^0.3.1"
+    "@eslint/core": "npm:^0.15.1"
+    "@eslint/plugin-kit": "npm:^0.3.4"
     github-slugger: "npm:^2.0.0"
     mdast-util-from-markdown: "npm:^2.0.2"
     mdast-util-frontmatter: "npm:^2.0.1"
-    mdast-util-gfm: "npm:^3.0.0"
+    mdast-util-gfm: "npm:^3.1.0"
     micromark-extension-frontmatter: "npm:^2.0.0"
     micromark-extension-gfm: "npm:^3.0.0"
-  checksum: 10c0/bacd3dedbe053afe46c674027d36211bc52faef091cba9faf6893ccdbcc8052f9ee6323e493d8a97e0634fbd2b7c7975babb0dcb2770956f095ce4fe46cf9764
+  checksum: 10c0/96d53aeefebd5107fbcafc5549e397d131d79d78cf028737e313f92b1d57314e18992fc3e1998f17f9977a3a310baa0bdadeb2ecf4edde8bb6df5c557d3fccd9
   languageName: node
   linkType: hard
 
@@ -2745,6 +2745,16 @@ __metadata:
     "@eslint/core": "npm:^0.14.0"
     levn: "npm:^0.4.1"
   checksum: 10c0/a75f0b5d38430318a551b83e27bee570747eb50beeb76b03f64b0e78c2c27ef3d284cfda3443134df028db3251719bc0850c105f778122f6ad762d5270ec8063
+  languageName: node
+  linkType: hard
+
+"@eslint/plugin-kit@npm:^0.3.4":
+  version: 0.3.4
+  resolution: "@eslint/plugin-kit@npm:0.3.4"
+  dependencies:
+    "@eslint/core": "npm:^0.15.1"
+    levn: "npm:^0.4.1"
+  checksum: 10c0/64331ca100f62a0115d10419a28059d0f377e390192163b867b9019517433d5073d10b4ec21f754fa01faf832aceb34178745924baab2957486f8bf95fd628d2
   languageName: node
   linkType: hard
 
@@ -2772,7 +2782,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanwhocodes/momoa@npm:^3.3.4":
+"@humanwhocodes/momoa@npm:^3.3.8":
   version: 3.3.8
   resolution: "@humanwhocodes/momoa@npm:3.3.8"
   checksum: 10c0/bb42aa5d9e9cba5348ecbf10a09873d94b8ab2bf3fbec58aada2ff4e3f7a378ee85c5a39879de36af1646c47f0d101c2bee2238ea3704a426f880fbf82c7da16
@@ -3400,8 +3410,8 @@ __metadata:
   linkType: hard
 
 "@stylistic/eslint-plugin@npm:^5.0.0":
-  version: 5.2.1
-  resolution: "@stylistic/eslint-plugin@npm:5.2.1"
+  version: 5.2.2
+  resolution: "@stylistic/eslint-plugin@npm:5.2.2"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.7.0"
     "@typescript-eslint/types": "npm:^8.37.0"
@@ -3411,7 +3421,7 @@ __metadata:
     picomatch: "npm:^4.0.3"
   peerDependencies:
     eslint: ">=9.0.0"
-  checksum: 10c0/260f9fd829a23a6f4512566b8c47992119fb2a353c20f6445137bea52a347d8fd75362138a07efd7aeecb96cb41ae9dfcab18fca0d4b2dbb62759f0f1e6d6b75
+  checksum: 10c0/00c75290823340d2234d29a56caad0f66117bcc9e9ad0d8b830f19cfeb522fe5e0fb4828d1bf3cc29eda68095682d0c43e6eb8c17cd282a4872f972cf605cdbd
   languageName: node
   linkType: hard
 
@@ -3556,11 +3566,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^24.0.0":
-  version: 24.0.15
-  resolution: "@types/node@npm:24.0.15"
+  version: 24.1.0
+  resolution: "@types/node@npm:24.1.0"
   dependencies:
     undici-types: "npm:~7.8.0"
-  checksum: 10c0/39ead0c0ff25dde29357630b5eaa7dd73cf3af796dbd0f01ed439a8af01cbddfa6b68aa9d67fb3243962836170a4463ff856c47fa822250c585987f707eb42b3
+  checksum: 10c0/6c4686bc144f6ce7bffd4cadc3e1196e2217c1da4c639c637213719c8a3ee58b6c596b994befcbffeacd9d9eb0c3bff6529d2bc27da5d1cb9d58b1da0056f9f4
   languageName: node
   linkType: hard
 
@@ -7126,7 +7136,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-gfm@npm:^3.0.0":
+"mdast-util-gfm@npm:^3.1.0":
   version: 3.1.0
   resolution: "mdast-util-gfm@npm:3.1.0"
   dependencies:
