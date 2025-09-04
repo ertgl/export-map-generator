@@ -14,6 +14,7 @@ import stylisticPlugin from "@stylistic/eslint-plugin";
 import jestPlugin from "eslint-plugin-jest";
 import perfectionistPlugin from "eslint-plugin-perfectionist";
 import ymlPlugin from "eslint-plugin-yml";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 import JEST_PACKAGE_JSON from "jest/package.json" with { type: "json" };
 import typescriptPlugin from "typescript-eslint";
@@ -85,7 +86,7 @@ const stylisticBaseCustomizationOptions = {
 /**
  * @type {Config}
  */
-export default typescriptPlugin.config([
+export default defineConfig([
   {
     files: [
       PATTERN_ALL,
