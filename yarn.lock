@@ -2284,16 +2284,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.4":
-  version: 5.0.15
-  resolution: "@cspell/dict-en-gb@npm:5.0.15"
-  checksum: 10c0/63d7bcd3e752be5fc02a96865f479df30fc3cd02d7da55becbdba5313863023b6c70220d438b8bd8781a291d2f565127c98bd75d6a20cc0fd1a5f291d83419b0
+  version: 5.0.16
+  resolution: "@cspell/dict-en-gb@npm:5.0.16"
+  checksum: 10c0/1a9fac00973ae4a7ed589407b326bc18bca4e46de9ae07a7fae32f52cfcf357f81ac28811c4df25b1627363075e51ffd668ffa135f6423b33781f440041ff66e
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.4.20, @cspell/dict-en_us@npm:^4.4.8":
-  version: 4.4.20
-  resolution: "@cspell/dict-en_us@npm:4.4.20"
-  checksum: 10c0/16296744f18267c78a6b3162a793daddb7c422bd9ec75842cc4fb20808ab80bcaad3a2f3ec3a82ad6b5f635d12a8b3d76f2946974f16667f833788736f40277f
+  version: 4.4.21
+  resolution: "@cspell/dict-en_us@npm:4.4.21"
+  checksum: 10c0/609571fbaf2d9d40fa4389e64956349c2a5d27aa0de3bf0c5a06a4104a6503cc7372bafaf42eaccb28cc52e4148903e859664f90f611c85a989dd46991cb7e75
   languageName: node
   linkType: hard
 
@@ -2464,9 +2464,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.18, @cspell/dict-npm@npm:^5.2.3":
-  version: 5.2.18
-  resolution: "@cspell/dict-npm@npm:5.2.18"
-  checksum: 10c0/af92cf069aef155abd6e6004ad9612cbcfc939ac50ca80a108192db5461cf0886ec408fbc811d3f772c6b67385ec48f6d281f3d451620f910f74049462b0ff46
+  version: 5.2.19
+  resolution: "@cspell/dict-npm@npm:5.2.19"
+  checksum: 10c0/866d3a9c1ef95b02e0340e6f97d690540d12eceea03714081ea72d215080258b19815da214d77954063a09ae04758364e58a8199fdad7c2d260a5723c4bd37d1
   languageName: node
   linkType: hard
 
@@ -2761,8 +2761,8 @@ __metadata:
   linkType: hard
 
 "@eslint/markdown@npm:^7.0.0":
-  version: 7.4.1
-  resolution: "@eslint/markdown@npm:7.4.1"
+  version: 7.5.0
+  resolution: "@eslint/markdown@npm:7.5.0"
   dependencies:
     "@eslint/core": "npm:^0.16.0"
     "@eslint/plugin-kit": "npm:^0.4.0"
@@ -2773,7 +2773,7 @@ __metadata:
     micromark-extension-frontmatter: "npm:^2.0.0"
     micromark-extension-gfm: "npm:^3.0.0"
     micromark-util-normalize-identifier: "npm:^2.0.1"
-  checksum: 10c0/e5387b83523cff30dc806bac5a3136eaec901f63846eb7c18c5fc2ff5dbf45b948a52167df5f70fadbe68fdef11f1c7aa3312ecaadee563b778f903b9d9dd51d
+  checksum: 10c0/47512ef34f61870585fbb409fcd8c41749c673a0329c77ad3c39dc876c3e8144b160a5d0afbc84880cc97c5fe18c9215dacbe82584c74b633e2875f60dec17fc
   languageName: node
   linkType: hard
 
