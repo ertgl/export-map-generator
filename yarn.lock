@@ -2553,9 +2553,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.22, @cspell/dict-npm@npm:^5.2.3":
-  version: 5.2.23
-  resolution: "@cspell/dict-npm@npm:5.2.23"
-  checksum: 10c0/f2d26a59ae5daa88120a0c616bae25e019f91ffea0f980696067060edf12890cf2e2da8993db6b25f3d13d1c690c6844eedfe3cab607fd81eb92f57b1903e179
+  version: 5.2.24
+  resolution: "@cspell/dict-npm@npm:5.2.24"
+  checksum: 10c0/acdf77e78575ddc4d16c0c96d5d50e510967698d380ca56658edb186601cf4ea8c190bff915fa52216c6fcdbeb7377c7c38d88fada7a1be4ae3836b2ef941c9c
   languageName: node
   linkType: hard
 
@@ -5330,8 +5330,8 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-jest@npm:^29.0.1":
-  version: 29.2.0
-  resolution: "eslint-plugin-jest@npm:29.2.0"
+  version: 29.2.1
+  resolution: "eslint-plugin-jest@npm:29.2.1"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.0.0"
   peerDependencies:
@@ -5343,7 +5343,7 @@ __metadata:
       optional: true
     jest:
       optional: true
-  checksum: 10c0/3880065bc4f8081fb7f5bc017fae65b383e35c72445619bb6037fa374a84c36c18503642353c4615ddba8c8781b0ff1724decbc9b9b2f45f0e279e199797aeb8
+  checksum: 10c0/9115e35a537d458b37236c0ebba2ce357226d24cc0a2345c29fd8b14a63681343fc71ef0d4f0bbb47575f5c6a76b21da6dee183db4d8e0ccf9d8f4bfbb8c743f
   languageName: node
   linkType: hard
 
