@@ -307,49 +307,53 @@ export default defineConfig([
       "perfectionist/sort-imports": [
         "error",
         {
-          customGroups: {
-            type: {
-              "node-type": /^node:.+$/iu.source,
+          customGroups: [
+            {
+              elementNamePattern: /^node:.+$/iu.source,
+              groupName: "type-node",
+              selector: "type",
             },
-            value: {
-              node: /^node:.+$/iu.source,
+            {
+              elementNamePattern: /^node:.+$/iu.source,
+              groupName: "value-node",
             },
-          },
+          ],
           groups: [
             [
-              "node-type",
-              "node",
-              "builtin",
+              "type-node",
+              "value-node",
+              "value-builtin",
             ],
             [
-              "type",
-              "external",
+              "type-import",
+              "value-external",
             ],
             [
-              "internal-type",
-              "internal",
+              "type-internal",
+              "value-internal",
             ],
             [
-              "parent-type",
-              "parent",
+              "type-parent",
+              "value-parent",
             ],
             [
-              "sibling-type",
-              "sibling",
+              "type-sibling",
+              "value-sibling",
             ],
             [
-              "index-type",
-              "index",
+              "type-index",
+              "value-index",
             ],
-            ["object"],
+            ["ts-equals-import"],
             ["unknown"],
           ],
           ignoreCase: false,
           internalPattern: [
             /^export-map-generator(?:[\\/].*)?$/iu.source,
           ],
-          newlinesBetween: "always",
-          tsconfigRootDir: __dirname,
+          tsconfig: {
+            rootDir: __dirname,
+          },
         },
       ],
     },
