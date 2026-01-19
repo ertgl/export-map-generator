@@ -7591,8 +7591,8 @@ __metadata:
   linkType: hard
 
 "memfs@npm:^4.17.2":
-  version: 4.52.0
-  resolution: "memfs@npm:4.52.0"
+  version: 4.54.0
+  resolution: "memfs@npm:4.54.0"
   dependencies:
     "@jsonjoy.com/json-pack": "npm:^1.11.0"
     "@jsonjoy.com/util": "npm:^1.9.0"
@@ -7600,7 +7600,7 @@ __metadata:
     thingies: "npm:^2.5.0"
     tree-dump: "npm:^1.0.3"
     tslib: "npm:^2.0.0"
-  checksum: 10c0/ef4206feb66eca8e3460d9b4a524941b649cdc56bc3c62bcd66bedfee2c076714685f9344172c58dbc736ac86c78e6119ce078974c9929b019966b354f377d27
+  checksum: 10c0/b428f99ca89cf552d1c420a9097bb35f68ca23add954be2a1cbb779906e8c974ec8a958a5b0772491c15bf7cc2b51368323361dd3d3137e8afc08aacc0b77d1d
   languageName: node
   linkType: hard
 
