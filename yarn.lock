@@ -2455,16 +2455,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.4":
-  version: 5.0.21
-  resolution: "@cspell/dict-en-gb@npm:5.0.21"
-  checksum: 10c0/636bf849134e2a6a668588004f6605ca95ee657a37ebfbb30039ecb66e7f2e61e9f6c14f3a38dc2db2271c16a061e0a02796a80009a2922793cd0934796d9298
+  version: 5.0.22
+  resolution: "@cspell/dict-en-gb@npm:5.0.22"
+  checksum: 10c0/856952cd1aa7f8eec2925c175985a56606b72ecbba23f07bed709790d6de72222992c66be7952bdeea9399a43682f9dbbdf79eb142600359aef46d169bb10096
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.4.27, @cspell/dict-en_us@npm:^4.4.8":
-  version: 4.4.27
-  resolution: "@cspell/dict-en_us@npm:4.4.27"
-  checksum: 10c0/0d139f30664802a374ebe77647f236a3367051c31ad41ca8c7f78622b5efdaa2e898c2f624b97a85eee5d799853fdb15ae7e223016b1b709d841781fee5ef900
+  version: 4.4.28
+  resolution: "@cspell/dict-en_us@npm:4.4.28"
+  checksum: 10c0/b1defb0f68db71139d45a7323d4edd168788740d958014931d8295633524b3f8ad16385415c1760d2e81d653674d177083a12044ce5bb59f3c68cb3aedb69b40
   languageName: node
   linkType: hard
 
@@ -2635,9 +2635,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.3, @cspell/dict-npm@npm:^5.2.31":
-  version: 5.2.31
-  resolution: "@cspell/dict-npm@npm:5.2.31"
-  checksum: 10c0/ff675d05d46f7e4ed887d57b818ab27b9c33287312fedaa54ca2b68711dd6dfff18f135f26b9e322516b11d237dc5a3e2c58d44101d4ffd3b0b46ba6f9e3e312
+  version: 5.2.32
+  resolution: "@cspell/dict-npm@npm:5.2.32"
+  checksum: 10c0/a7de85d0b7b079d7bd37771b4c2e3e773485d5c51e2d30fb9b20823acd31903b6d24c8549d20b14d444d2281158773c0760cb3afbc929d85651744b51483c29f
   languageName: node
   linkType: hard
 
@@ -4064,11 +4064,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^25.0.0":
-  version: 25.1.0
-  resolution: "@types/node@npm:25.1.0"
+  version: 25.2.0
+  resolution: "@types/node@npm:25.2.0"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/5f393a127dc9565e2e152514a271455d580c7095afc51302e73ffe8aac3526b64ebacc3c10dd40c93cef81a95436ef2c6a8b522930df567a3f6b189c0eef649a
+  checksum: 10c0/89559ea0de5c8c2da051b384f2cd3161012446816e05d18841838f814e57eb1865f000622e903f08d14f5242736063ed4003a4a359730fdd367e35e2122a8fce
   languageName: node
   linkType: hard
 
@@ -6357,9 +6357,9 @@ __metadata:
   linkType: hard
 
 "globals@npm:^17.0.0":
-  version: 17.2.0
-  resolution: "globals@npm:17.2.0"
-  checksum: 10c0/fd25a98b08c1d31082337cbbb5ff1b90b9980e1db69a8621fb942bdb2cdca8aa54d61466742e8bf4910578ea5fa903b8bf83bffd1b2d45551cc614830dba910b
+  version: 17.3.0
+  resolution: "globals@npm:17.3.0"
+  checksum: 10c0/7f21443ecaa60c6e9ff56d9fb6f10a9b5f9514e7f22e5392f715472bb220ce31c865ebf414a32695150e733fb3e1013e6322dbce70fddd1e066f372b8d55a4b8
   languageName: node
   linkType: hard
 
