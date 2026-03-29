@@ -3,7 +3,6 @@
     "allowJs": true,
     "allowUnreachableCode": false,
     "alwaysStrict": true,
-    "baseUrl": "${configDir}",
     "checkJs": true,
     "declaration": false,
     "esModuleInterop": true,
@@ -19,6 +18,9 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": [
+      "node"
+    ]
   }
 }
