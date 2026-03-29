@@ -1,3 +1,9 @@
+import {
+  describe,
+  expect,
+  it,
+} from "@jest/globals";
+
 import { TEST_DATA_TREES_DIRECTORY_PATH } from "../../__tests__/__constants__/paths";
 import { TREE_1_FS } from "../../__tests__/__data__/trees/tree-1";
 import { resolveContext } from "../../context";

@@ -1,4 +1,9 @@
-import { jest } from "@jest/globals";
+import {
+  describe,
+  expect,
+  it,
+  jest,
+} from "@jest/globals";
 
 import type { Config } from "../config";
 import { type Context, type ContextResolutionOptions, resolveContext } from "../context";
@@ -28,7 +33,7 @@ async function resolveTree1Context(
       presets: [
         createStandardPreset({
           updater: {
-            backup: true,
+            safe: true,
           },
         }),
         createJSPreset({
@@ -258,7 +263,7 @@ describe(
             presets: [
               createStandardPreset({
                 updater: {
-                  backup: true,
+                  safe: true,
                 },
               }),
               createDTSPreset({

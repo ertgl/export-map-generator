@@ -1,6 +1,12 @@
 import { relative as getRelativePath } from "node:path";
 
 import {
+  describe,
+  expect,
+  it,
+} from "@jest/globals";
+
+import {
   getDirentFullPath,
   getRebasedDirentRelativePath,
 } from "../dirent";
