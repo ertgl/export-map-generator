@@ -1,3 +1,9 @@
+import {
+  describe,
+  expect,
+  it,
+} from "@jest/globals";
+
 import { getSortedArrayByPattern } from "../array";
 
 describe(

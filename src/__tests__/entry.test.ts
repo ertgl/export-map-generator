@@ -1,4 +1,10 @@
 import {
+  describe,
+  expect,
+  it,
+} from "@jest/globals";
+
+import {
   type ConditionalExportPaths,
   createEntry,
   deriveConditionalExportPaths,
