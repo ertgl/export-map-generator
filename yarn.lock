@@ -3446,6 +3446,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jest/schemas@npm:30.4.1":
+  version: 30.4.1
+  resolution: "@jest/schemas@npm:30.4.1"
+  dependencies:
+    "@sinclair/typebox": "npm:^0.34.0"
+  checksum: 10c0/96f388ebfc1974457fcbde2ad36c40a0b549cba3f624fe8d9d6e5903a152dc75e4043f4ac9ac7668622f2ecb0f9a4dcb9a38edf3bc0d52b82045b2bb2b69b72a
+  languageName: node
+  linkType: hard
+
 "@jest/snapshot-utils@npm:30.3.0":
   version: 30.3.0
   resolution: "@jest/snapshot-utils@npm:30.3.0"
@@ -8900,7 +8909,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:30.3.0, pretty-format@npm:^30.0.0":
+"pretty-format@npm:30.3.0":
   version: 30.3.0
   resolution: "pretty-format@npm:30.3.0"
   dependencies:
@@ -8920,6 +8929,18 @@ __metadata:
     react-is-18: "npm:react-is@^18.3.1"
     react-is-19: "npm:react-is@^19.2.5"
   checksum: 10c0/9a040354fae09384996c6f50b80954a4de3f3da56285a85fc05983b6bd05b4ab30da5b03d4cb0026464bd86f3a8b919e32be529920a22bd8c8631b6f04e1b1cf
+  languageName: node
+  linkType: hard
+
+"pretty-format@npm:^30.0.0":
+  version: 30.4.1
+  resolution: "pretty-format@npm:30.4.1"
+  dependencies:
+    "@jest/schemas": "npm:30.4.1"
+    ansi-styles: "npm:^5.2.0"
+    react-is-18: "npm:react-is@^18.3.1"
+    react-is-19: "npm:react-is@^19.2.5"
+  checksum: 10c0/c7e6633740cd2f6d382f188c00c8b4b3f2bee3cda16db6753471c6bb4b94f76531358d3a7793062a0fb00d72ebfb934e8ae1d4f5ced6bb34c8e7f60996f90076
   languageName: node
   linkType: hard
 
