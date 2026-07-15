@@ -82,7 +82,7 @@ describe(
         const result = replaceSuffix(
           name,
           suffix,
-          replacement as unknown as string,
+          replacement,
         );
 
         expect(result).toBe(expected);
