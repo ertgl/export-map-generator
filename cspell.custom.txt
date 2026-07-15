@@ -9,3 +9,6 @@ mtsx
 
 # Node.js FS
 dirents
+
+# Usernames
+ertgl

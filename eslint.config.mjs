@@ -11,7 +11,8 @@ import javascriptPlugin from "@eslint/js";
 import jsonPlugin from "@eslint/json";
 import markdownPlugin from "@eslint/markdown";
 import stylisticPlugin from "@stylistic/eslint-plugin";
-import jestPlugin from "eslint-plugin-jest";
+// TODO(@ertgl): Enable `eslint-plugin-jest` once compatibility is established.
+// import jestPlugin from "eslint-plugin-jest";
 import perfectionistPlugin from "eslint-plugin-perfectionist";
 import ymlPlugin from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
@@ -41,15 +42,15 @@ const PATTERN_CTSX_MTSX_TSX = `${PATTERN_CTS_MTS_TS}x`;
 
 const PATTERN_CJS_CJSX_CTS_CTSX = `**/*.{cjs,cjsx,cts,ctsx}`;
 
-const PATTERN_TEST_CJS_CJSX_CTS_CTSX = `**/*.test.{cjs,cjsx,cts,ctsx}`;
+// const PATTERN_TEST_CJS_CJSX_CTS_CTSX = `**/*.test.{cjs,cjsx,cts,ctsx}`;
 
 const PATTERN_JS_JSX_TS_TSX = `**/*.{js,jsx,ts,tsx}`;
 
-const PATTERN_TEST_JS_JSX_TS_TSX = `**/*.test.{js,jsx,ts,tsx}`;
+// const PATTERN_TEST_JS_JSX_TS_TSX = `**/*.test.{js,jsx,ts,tsx}`;
 
 const PATTERN_MJS_MJSX_MTS_MTSX = `**/*.{mjs,mjsx,mts,mtsx}`;
 
-const PATTERN_TEST_MJS_MJSX_MTS_MTSX = `**/*.test.{mjs,mjsx,mts,mtsx}`;
+// const PATTERN_TEST_MJS_MJSX_MTS_MTSX = `**/*.test.{mjs,mjsx,mts,mtsx}`;
 
 const PATTERN_JSON = "**/*.json";
 
@@ -250,14 +251,14 @@ export default defineConfig([
     },
   },
 
-  {
-    ...jestPlugin.configs["flat/recommended"],
-    files: [
-      `__tests__/${PATTERN_TEST_CJS_CJSX_CTS_CTSX}`,
-      `__tests__/${PATTERN_TEST_JS_JSX_TS_TSX}`,
-      `__tests__/${PATTERN_TEST_MJS_MJSX_MTS_MTSX}`,
-    ],
-  },
+  // {
+  //   ...jestPlugin.configs["flat/recommended"],
+  //   files: [
+  //     `__tests__/${PATTERN_TEST_CJS_CJSX_CTS_CTSX}`,
+  //     `__tests__/${PATTERN_TEST_JS_JSX_TS_TSX}`,
+  //     `__tests__/${PATTERN_TEST_MJS_MJSX_MTS_MTSX}`,
+  //   ],
+  // },
 
   {
     settings: {

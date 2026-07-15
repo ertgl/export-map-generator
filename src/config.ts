@@ -1,3 +1,5 @@
+import { basename, dirname } from "node:path";
+
 import {
   cosmiconfig,
   defaultLoaders,
@@ -203,15 +205,17 @@ export async function loadConfigDefinition(
 
   const configFilePath = options.configFilePath ?? "";
 
-  const configSearchResult = await searchConfig(
-    options.cwd,
-    {
-      searchPlaces: (
-        configFilePath !== ""
-          ? [configFilePath]
-          : undefined
-      ),
-    },
+  const configSearchResult = (
+    configFilePath === ""
+      ? await searchConfig(options.cwd)
+      : await searchConfig(
+          dirname(configFilePath),
+          {
+            searchPlaces: [
+              basename(configFilePath),
+            ],
+          },
+        )
   );
 
   return configSearchResult.configDefinition ?? {};
