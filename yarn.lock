@@ -2201,9 +2201,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-common-misspellings@npm:^2.1.12, @cspell/dict-en-common-misspellings@npm:^2.1.13":
-  version: 2.1.13
-  resolution: "@cspell/dict-en-common-misspellings@npm:2.1.13"
-  checksum: 10c0/b2f63caeb8d4afceb31d363c92b91ebbc86ebb266b542da2d7e1f46bbd38fd90746763e45888a9a836d2d4d518d94487348b6f270ff42fe91a7de2ba165be9b0
+  version: 2.2.0
+  resolution: "@cspell/dict-en-common-misspellings@npm:2.2.0"
+  checksum: 10c0/36aea488627197a2e7e09c6d849f9274911d5a6152d3ccbdb0b9903f083849f3320609d825d2f1dee296d1a78ac3fdfc5934f98e84716c555e341d001c93ca26
   languageName: node
   linkType: hard
 
@@ -2395,9 +2395,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.38, @cspell/dict-npm@npm:^5.2.43":
-  version: 5.2.43
-  resolution: "@cspell/dict-npm@npm:5.2.43"
-  checksum: 10c0/f3bbee21cfc03100f93319edf1722d249c45a8116a0469d5a5ec8c3de3b5fd96fd08171cc8d1c25640b3caeb9981833a08e67b32b3a6a1e1bface2f5904bc23b
+  version: 5.2.45
+  resolution: "@cspell/dict-npm@npm:5.2.45"
+  checksum: 10c0/08f4686f1376536b7281872c636991cc0a90a929f0f9f94f6c1d7ef1e3a5d576988c6f6267858e21a13fb2aa960812aff5b87911772d562b38936480e8722d71
   languageName: node
   linkType: hard
 
