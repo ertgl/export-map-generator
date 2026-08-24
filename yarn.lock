@@ -2267,9 +2267,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-html@npm:^4.0.15":
-  version: 4.0.15
-  resolution: "@cspell/dict-html@npm:4.0.15"
-  checksum: 10c0/0812ae7f11ea2160ab4df8039b0f5af023c102d8806dc6ea9b8a90f96cc564b00dad167c3eb1a6685a244980ac203cc168438b352c84918a215147ef632aca10
+  version: 4.0.16
+  resolution: "@cspell/dict-html@npm:4.0.16"
+  checksum: 10c0/e17fb289a839b9b17debdc1398baaeb90bab1c15d1f86846d22cc60d62c9f96726c96c88a1290514e127359235307b5a0e8672a8c4c7f820d1672d255d69364e
   languageName: node
   linkType: hard
 
@@ -2330,14 +2330,14 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-markdown@npm:^2.0.16, @cspell/dict-markdown@npm:^2.0.17":
-  version: 2.0.17
-  resolution: "@cspell/dict-markdown@npm:2.0.17"
+  version: 2.0.18
+  resolution: "@cspell/dict-markdown@npm:2.0.18"
   peerDependencies:
     "@cspell/dict-css": ^4.1.2
-    "@cspell/dict-html": ^4.0.15
+    "@cspell/dict-html": ^4.0.16
     "@cspell/dict-html-symbol-entities": ^4.0.5
     "@cspell/dict-typescript": ^3.2.3
-  checksum: 10c0/d49bb1523a40e42d4185a349bbce7a93e87634e1e7a75694ffc666cbeb81d0eb1395150cbcd65bf1b1109f224cdee9bf9fadbf8c3f1b9ea93daaffe65e705083
+  checksum: 10c0/e9d7a09f439269d79c6077031219dc5d08573b54ff6c44f775ed76a2168a97a6e57bd50186fd1429fa5aaaf7dcf3594274114f8221bfe462cf9b17d682375e3f
   languageName: node
   linkType: hard
 
@@ -2356,9 +2356,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.38, @cspell/dict-npm@npm:^5.2.43":
-  version: 5.2.45
-  resolution: "@cspell/dict-npm@npm:5.2.45"
-  checksum: 10c0/08f4686f1376536b7281872c636991cc0a90a929f0f9f94f6c1d7ef1e3a5d576988c6f6267858e21a13fb2aa960812aff5b87911772d562b38936480e8722d71
+  version: 5.2.47
+  resolution: "@cspell/dict-npm@npm:5.2.47"
+  checksum: 10c0/4198526f88c1b229c8619c47de1dd79fde00efa87eb9c6d5fa0903d65341fa1c551c066c576b3f2d0695de2b84bcd6fdd69109821f96c023675eb8d8e3a467c8
   languageName: node
   linkType: hard
 
