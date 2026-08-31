@@ -2169,16 +2169,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.30":
-  version: 5.0.30
-  resolution: "@cspell/dict-en-gb@npm:5.0.30"
-  checksum: 10c0/2dc785e1611934b0e2178b02d3a6ad19d5d2795881e1a7d025a7111f10a733db8b792bd84b19598e9c3e4c34f9408822af754ea87025452f66baac2fed5b1360
+  version: 5.0.31
+  resolution: "@cspell/dict-en-gb@npm:5.0.31"
+  checksum: 10c0/2a1c904528b3a43765187d77675fc514209152ba6a477e15f658a4c3fa7a3d6d6ac24c8bba32a3c1b71e2f08efdf22f2803d046a3bffacd3712496be658a552e
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.4.36":
-  version: 4.4.36
-  resolution: "@cspell/dict-en_us@npm:4.4.36"
-  checksum: 10c0/7e1e6d4208584a8297864d267d4038ca3583d6b4ff6791ac7da3b945a5332f4368c3aec52217e8f25a29723233fce79eca7b5a4cf6f8dce52665b96d8da98bd3
+  version: 4.4.37
+  resolution: "@cspell/dict-en_us@npm:4.4.37"
+  checksum: 10c0/26778921b43641b2dbd4685d03abeefebf978306a560e05d7b04c0c6bbaff70caf5707f398e81831b7e746d721fbe2355a27eae601d3b9f495f8eb5708de890a
   languageName: node
   linkType: hard
 
@@ -5301,8 +5301,8 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-jest@npm:^29.15.4":
-  version: 29.16.1
-  resolution: "eslint-plugin-jest@npm:29.16.1"
+  version: 29.16.6
+  resolution: "eslint-plugin-jest@npm:29.16.6"
   dependencies:
     "@typescript-eslint/utils": "npm:^8.0.0"
   peerDependencies:
@@ -5317,7 +5317,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/6aca236a8db9e9e736322f991ad6f33d776b9fabd9c3ddb1bb24515191a4438b2908ec88c5768dcfbb2323f48e6105fab91ee41d35574fa0bdd7631d53986506
+  checksum: 10c0/c483057f6b7c6500c6208eb965b61fe3a81dbd86123dd1a129584ed8c490336275a8815196922c20bd4895761a7d5b993f7b37869c69d57594b522fe318def8d
   languageName: node
   linkType: hard
 
