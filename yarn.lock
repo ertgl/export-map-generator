@@ -2177,9 +2177,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-common-misspellings@npm:^2.1.13, @cspell/dict-en-common-misspellings@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@cspell/dict-en-common-misspellings@npm:2.2.0"
-  checksum: 10c0/36aea488627197a2e7e09c6d849f9274911d5a6152d3ccbdb0b9903f083849f3320609d825d2f1dee296d1a78ac3fdfc5934f98e84716c555e341d001c93ca26
+  version: 2.2.2
+  resolution: "@cspell/dict-en-common-misspellings@npm:2.2.2"
+  checksum: 10c0/d460fbd935d46a856978f4152efa32e7db101624b873e65d3f5c4106b6863caaa9f486b65215c9616fb3915988d6753da48acde5b6bf445485dcf6c6f9ed1354
   languageName: node
   linkType: hard
 
@@ -2191,16 +2191,16 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.30":
-  version: 5.0.31
-  resolution: "@cspell/dict-en-gb@npm:5.0.31"
-  checksum: 10c0/2a1c904528b3a43765187d77675fc514209152ba6a477e15f658a4c3fa7a3d6d6ac24c8bba32a3c1b71e2f08efdf22f2803d046a3bffacd3712496be658a552e
+  version: 5.0.34
+  resolution: "@cspell/dict-en-gb@npm:5.0.34"
+  checksum: 10c0/67f6cb29dd600a658f107ea4d85e76b3f7662bff32782e9dc1ec43d7bdf047999f9c3b8cea2a38df8bbd15b79773dc26ef9017386e26afd6e82fc44d43cc02a8
   languageName: node
   linkType: hard
 
 "@cspell/dict-en_us@npm:^4.4.36, @cspell/dict-en_us@npm:^4.4.37":
-  version: 4.4.37
-  resolution: "@cspell/dict-en_us@npm:4.4.37"
-  checksum: 10c0/26778921b43641b2dbd4685d03abeefebf978306a560e05d7b04c0c6bbaff70caf5707f398e81831b7e746d721fbe2355a27eae601d3b9f495f8eb5708de890a
+  version: 4.4.40
+  resolution: "@cspell/dict-en_us@npm:4.4.40"
+  checksum: 10c0/ee31d73cf85faa34c7d5738cb971552f87d57623a88896ad57118f990a8e020609ae3d79259011ea557ce2ce79355abb7df9bad908354a2cbaa339caf53eafdb
   languageName: node
   linkType: hard
 
@@ -2371,9 +2371,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.43, @cspell/dict-npm@npm:^5.2.48":
-  version: 5.2.48
-  resolution: "@cspell/dict-npm@npm:5.2.48"
-  checksum: 10c0/0a39bc699ebbdf33cc050cab4fceb3e4520dc11d5485f1fa8d41c8b24342bf43546c809a009c346aba1cee59831f58232fa4ecc59716eafac8072b7ccab48119
+  version: 5.2.49
+  resolution: "@cspell/dict-npm@npm:5.2.49"
+  checksum: 10c0/f57ab27fcf6233a6c20820f2208698a930f85b8610fd90cea8a571df0f610ba43545482ce4065ced6bad092527deec6d4db26cbbaeaa0e046e554de70b48ae82
   languageName: node
   linkType: hard
 
