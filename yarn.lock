@@ -2191,9 +2191,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-gb@npm:^5.0.30":
-  version: 5.0.34
-  resolution: "@cspell/dict-en-gb@npm:5.0.34"
-  checksum: 10c0/67f6cb29dd600a658f107ea4d85e76b3f7662bff32782e9dc1ec43d7bdf047999f9c3b8cea2a38df8bbd15b79773dc26ef9017386e26afd6e82fc44d43cc02a8
+  version: 5.0.35
+  resolution: "@cspell/dict-en-gb@npm:5.0.35"
+  checksum: 10c0/4ea377ece6745aeb45cbc8d3063a886de35a6bf417c353346e13116ce17d1b73e8c4e65713743ed6f0509525f0edd303c6c0025a4b632c9d2f89e5400279d9e5
   languageName: node
   linkType: hard
 
