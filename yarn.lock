@@ -2177,9 +2177,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-en-common-misspellings@npm:^2.1.13, @cspell/dict-en-common-misspellings@npm:^2.2.5":
-  version: 2.2.5
-  resolution: "@cspell/dict-en-common-misspellings@npm:2.2.5"
-  checksum: 10c0/7ecc056b41e70bbcd979311f578c4d3b6deeca40b23177fb755194b3260a31c3c682888b75621c809f9b9aa4fca7b501943167dd0d9f15b99945e74bf19b767d
+  version: 2.2.6
+  resolution: "@cspell/dict-en-common-misspellings@npm:2.2.6"
+  checksum: 10c0/164a39d6c19265603ae1527cf6a123ab7e2e9f61892d8ab269b85ef488abd8d93e4f56849d8df03210160d6028736d79bd122236468a72e466673845b4c38bbd
   languageName: node
   linkType: hard
 
@@ -2371,9 +2371,9 @@ __metadata:
   linkType: hard
 
 "@cspell/dict-npm@npm:^5.2.43, @cspell/dict-npm@npm:^5.2.54":
-  version: 5.2.55
-  resolution: "@cspell/dict-npm@npm:5.2.55"
-  checksum: 10c0/b8a2003020d8eaba8e39ff9c51c284b55f7e8a28bcfe70aa8e2a890993ac6740bbe7798ffdf0586cbf9ad0dc33308f52ac6eab54a88b295277322e4314667d18
+  version: 5.2.56
+  resolution: "@cspell/dict-npm@npm:5.2.56"
+  checksum: 10c0/78713348a11d37e194818ac64a2523e251d32dbb67176dd3617252a6a54a689e545d2ef370dd40276ad2b9f2555682db68db59862c5f918ccd400987e3906ed1
   languageName: node
   linkType: hard
 
@@ -5598,8 +5598,8 @@ __metadata:
   linkType: hard
 
 "eslint-plugin-yml@npm:^3.6.0":
-  version: 3.9.0
-  resolution: "eslint-plugin-yml@npm:3.9.0"
+  version: 3.10.0
+  resolution: "eslint-plugin-yml@npm:3.10.0"
   dependencies:
     "@eslint/core": "npm:^1.0.1"
     "@eslint/plugin-kit": "npm:^0.7.0"
@@ -5610,7 +5610,7 @@ __metadata:
     yaml-eslint-parser: "npm:^2.0.0"
   peerDependencies:
     eslint: ">=9.38.0"
-  checksum: 10c0/0a553852344bd2bd8e92007997e4bd80778137a3f0cbf24977d583f086f63a1ef2c84a12230a0f9cec244088634a1ebfe732d96a493dd7a5cca15634f38b3b27
+  checksum: 10c0/f9f74fee06d61d874ca07240bc84d19b4e77c583df24e12d72c9f55ed713a02e21045e174e3e17e9c81456ce16a9a8c2f6aa6502291898573772363a99071534
   languageName: node
   linkType: hard
 
